@@ -1,0 +1,27 @@
+{
+  "name": "angular-pop-form",
+  "version": "0.0.1",
+  "authors": [
+    "Jason Kuchynka <jason.kuchynka@gmail.com>"
+  ],
+  "description": "Angular js form builder and directive",
+  "main": [
+    "pop-form.js",
+    "pop-form.tpl.html"
+  ],
+  "keywords": [
+    "angular",
+    "forms"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-form-errors-directive": "~1.5.4"
+  }
+}

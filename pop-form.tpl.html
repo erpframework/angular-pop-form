@@ -1,0 +1,27 @@
+
+<form name="popForm" novalidate ng-submit="doSubmit()" ng-class="form.classes">
+
+    <div ng-class="group.classes" ng-repeat="group in groups | orderBy:'weight'">
+
+        <span ng-repeat="element in group.elements | orderBy: 'weight'" ng-class="group.wrapperClasses">
+
+            <label ng-if="element.label" ng-attr-for="{{element.id}}" class="control-label">{{element.label}}{{form.labelSuffix}}</label>
+            <span ng-switch="element.type">
+
+                <div ng-switch-when="html" ng-bind-html="element.trustedHtml"></div>
+
+                <button ng-switch-when="submit" type="submit" ng-class="element.classes" ng-bind="element.text"></button>
+
+                <button ng-switch-when="button" type="button" ng-class="element.classes" ng-bind="element.text"></button>
+
+                <select ng-switch-when="select" ng-attr-id="{{element.id}}" ng-model="record[element.modelProp]" ng-options="item for item in element.options" ng-class="element.classes"></select>
+
+                <input ng-switch-default ng-attr-type="{{element.type}}" ng-attr-id="{{element.id}}" ng-attr-placeholder="{{element.placeholder}}" ng-class="element.classes" ng-model="record[element.modelProp]" />
+
+            </span>
+
+        </span>
+
+    </div>
+
+</form>
